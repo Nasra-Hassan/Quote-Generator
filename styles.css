@@ -14,7 +14,7 @@ body {
 
 .quote-box {
   background: #fff;
-  width: 700px;
+  width: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -28,4 +28,41 @@ body {
 .quote-box h2 {
 font-size: 20px;
 margin-bottom: 40px;
+position: relative;
+}
+
+
+
+.quote-box h2::after {
+  content:'';
+  width: 75px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgb(23, 124, 229);
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+.quote-box blockquote::before, .quote-box blockquote::after {
+  content: '"';
+}
+
+.quote-box span {
+  display: block;
+  margin-top: 10px;
+  float: right;
+  position: relative;
+}
+
+.quote-box span::before {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background: rgb(23, 124, 229);
+  position: absolute;
+  top: 50%;
+  left: -30px;
+
 }
