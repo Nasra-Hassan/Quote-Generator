@@ -10,14 +10,45 @@
 <body>
   <div class="quote-box">
     <h2>Quote of the day</h2>
-    <blockquote>Loading...</blockquote>
-    <span>Loading...</span>
+    <blockquote id="quote">Loading...</blockquote>
+    <span id="author">Loading...</span>
     <div>
-      <button>Quote</button>
-      <button>Tweet</button>
+      <button onclick="getquote(api_url)">New Quote</button>
+      <button onclick="tweet()"><img src="images/twitter.jpg" alt="">Tweet</button>
     </div>
 
   </div>
+  <script>
+
+    const quote = document.getElementById("quote")
+    const author = document.getElementById("author")
+
+   const api_url = "https://dummyjson.com/quotes"
+
+   async function getquote(url) {
+    const response = await fetch(url)
+    var data = await response.json();
+
+    console.log(data);
+
+    const random =
+      data.quotes[Math.floor(Math.random() * data.quotes.length)];
+
+    quote.innerHTML = random.quote;
+    author.innerHTML = "- " + (random.author || "Unknown");
+    
+   }
+   getquote(api_url)
+
+    function tweet(){
+      window.open("https://x.com/intent/tweet?text=Hello%20World", "Tweet Window", "width=600, height=300")
+    }
+ 
+  
+</script>
+   
+   
+  
   
 </body>
 </html>
