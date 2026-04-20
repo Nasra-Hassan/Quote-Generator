@@ -29,7 +29,7 @@ Quotes are fetched from: "https://dummyjson.com/quotes"
 
 ## Future Improvements
 
-• Share actual quote on Twitter
-• Add loading animation
-• Save favorite quotes
-• Add copy-to-clipboard feature
+- Share actual quote on Twitter
+- Add loading animation
+- Save favorite quotes
+- Add copy-to-clipboard feature
